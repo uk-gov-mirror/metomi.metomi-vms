@@ -48,7 +48,7 @@ mamba env export > "${PACKDIR}/${LABEL}.yml"
 echo "[INFO] Packing conda environment"
 dest=/opt/cylc-8
 rm -f ${PACKDIR}/cylc-8.tgz
-conda pack -q --dest-prefix=${dest} -o "${PACKDIR}/cylc-8.tgz"
+${MINIFORGE_DIR}/bin/conda-pack -q --dest-prefix=${dest} -o "${PACKDIR}/cylc-8.tgz"
 if [[ -e ${dest} ]]; then
   echo "[INFO] Removing existing Cylc 8 installation"
   rm -rf ${dest}
